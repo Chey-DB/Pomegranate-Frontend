@@ -7,7 +7,7 @@ const Timer = () => {
   /* toggle input box*/
   const [toggleForm, setToggleForm] = useState(false)
   /* store the input mins*/
-  const [timeInput, setTimeInput] = useState(25)
+  const [timeInput, setTimeInput] = useState(1)
   /* toggle start and stop */
   const [countDownStarted, setCountDownStarted] = useState(false)
   /* time in milliseconds */
@@ -23,7 +23,7 @@ const Timer = () => {
     // set new timer minutes(milliseconds)
     setTimeInMilliseconds(timeInput * 60 * 1000)
     //add the time to used times
-    setUsedTimes(times => times.concat(timeInput))
+    setUsedTimes(times => [...times, timeInput])
   }
   /* Stop Timer */
   const stopTimer = () => {
@@ -32,7 +32,7 @@ const Timer = () => {
   }
 
   const onToggle = () => {
-    setToggleForm(toggle => toggle =!toggle)
+    setToggleForm(toggle => toggle = !toggleForm)
   }
 
   // Get time from input and set time input

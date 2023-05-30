@@ -22,7 +22,7 @@ const TimerAction = ({
   useEffect(() => {
     let numMap = {}
 
-    usedTimes.forEach((num) => {
+    usedTimes.forEach(function(num){
       if(numMap[num]){
         numMap[num]++
       } else {
@@ -42,14 +42,15 @@ const TimerAction = ({
     <div className='ta-container'>
       <div className='btn-container'>
         {!countDownStarted?
-        <button onClick={() => startTimer()}> Start </button> :
-        <button onClick={() => stopTimer()}> Stop </button>}
+        <button onClick={startTimer}> Start </button> :
+        <button onClick={stopTimer}> Stop </button>}
         <button onClick={onToggle}> Set Time </button>
       </div>
 
       {toggleForm ?
       <div className='input-form'>
-        <input type='number' placeholder='Enter time' 
+        <input type='number' 
+        placeholder='Enter time' 
         onChange={handleChange}
         defaultValue={timeInput}
         />
@@ -72,7 +73,7 @@ const TimerAction = ({
 
         <div className='reset'>
           <button
-          onClick= {() => setUsedTimes()}>Clear</button>
+          onClick={onReset}>Clear</button>
         </div>
 
       </div>
