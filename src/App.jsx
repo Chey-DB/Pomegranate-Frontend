@@ -1,17 +1,25 @@
-import React from "react"
-import Login from "./pages/Login"
-import Home from "./pages/Home "
-import SignUp from "./pages/SignUpPage"
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import * as Pages from "./pages"
+import { NavBar } from './components';
+// import "./App.css" 
 
-function App() {
 
+const App = () => {
   return (
-    <div>
-     {/* <Login/> */}
-     {/* <Home/> */}
-     <SignUpPage/>
-    </div>
-  
+    <Routes>
+      <Route>
+        <Route path="/" element={<NavBar />}>
+          <Route index element={<Pages.Home />} />
+          {/* <Route path="/leaderboard" element={<Pages.Leaderboard />} /> */}
+          {/* <Route path="/profile" element={<Pages.Profile />} /> */}
+          <Route path="/login" element={<Pages.LoginPage />} />
+          <Route path="/signup" element={<Pages.SignUpPage />} />
+
+          <Route path="*" element={<Pages.NotFound />} />
+        </Route>
+      </Route>
+    </Routes>
   )
 }
 
