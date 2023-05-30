@@ -14,7 +14,6 @@ const App = () => {
           <Route path="/leaderboard" element={<Pages.Leaderboard />} />
           <Route path="/profile" element={<Pages.Profile />} />
           <Route path="/login" element={<Pages.Login />} />
-          <Route path="/logout" element={<Pages.Logout />} />
           <Route path="/signup" element={<Pages.Signup />} />
 
           <Route path="*" element={<Pages.NotFound />} />
