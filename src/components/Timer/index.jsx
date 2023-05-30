@@ -44,7 +44,7 @@ const Timer = () => {
   // get time ahead in milliseconds
   const countDownTime = new Date().getTime() + timeInMilliseconds;
 
-  // calculatre animation duration
+  // calculate animation duration
   const animationDuration = ((countDownTime - new Date().getTime()) / 1000)
 
   return (
