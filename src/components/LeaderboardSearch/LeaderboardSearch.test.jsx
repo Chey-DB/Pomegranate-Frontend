@@ -1,6 +1,6 @@
 import React from "react";
 import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
-import { screen, render, cleanup, waitFor } from "@testing-library/react";
+import { screen, render, cleanup } from "@testing-library/react";
 
 import matchers from "@testing-library/jest-dom/matchers";
 expect.extend(matchers)
@@ -10,6 +10,10 @@ import axios from "axios";
 import LeaderboardSearch from ".";
 
 describe("LeaderboardSearch Component", () => {
+
+    afterEach(() => {
+        cleanup()
+    })
 
     it("renders the search form", () => {
         render(<LeaderboardSearch />)
