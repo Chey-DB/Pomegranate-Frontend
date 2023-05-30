@@ -1,7 +1,7 @@
 import React from 'react'
+import LeaderboardSearch from '../LeaderboardSearch';
 import LeaderboardItem from "../LeaderboardItem";
 import "./style.css"
-import LeaderboardSearch from '../LeaderboardSearch';
 
 const UserLeaderboard = ({ users }) => {
     return (
