@@ -45,7 +45,7 @@ const Timer = () => {
   const countDownTime = new Date().getTime() + timeInMilliseconds;
 
   // calculate animation duration
-  const animationDuration = ((countDownTime - new Date().getTime()) / 1000)
+  const animationDuration = ((countDownTime - new Date().getTime()) / 1000 / 2)
 
   return (
     <div className="timerContainer">

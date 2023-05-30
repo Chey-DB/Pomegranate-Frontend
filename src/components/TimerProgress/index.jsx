@@ -25,6 +25,7 @@ const TimerProgress = ({
   useEffect(() => {
     if((minutes + seconds) <= 0){
       stopTimer();
+      alert('time up!')
       return;
     }
   }, [minutes,seconds])
