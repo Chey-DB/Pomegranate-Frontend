@@ -37,7 +37,7 @@ const LoginPage = () => {
         </div>
 
         <button type="submit" className="form__button">Login</button>
-        <p className="reg">Don't have an account? Register here!</p>
+        <p className="reg">Don't have an account? <Link to="/signup"> Register here!</Link></p>
       </form>
     </>
   );
