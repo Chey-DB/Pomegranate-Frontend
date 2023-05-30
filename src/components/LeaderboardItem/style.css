@@ -1,0 +1,15 @@
+.user-score {
+    font-size: 30px;
+    background-color: #FFF6C3;
+    border: 2px solid #DC0000;
+    padding: 50px;
+    width: 70%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.user-score:hover {
+    transform: scale(0.98);
+}
