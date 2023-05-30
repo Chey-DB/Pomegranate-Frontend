@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react'
 import { UserLeaderboard } from "../../components";
 
-const Leaderboard = () => {
+const LeaderBoard = () => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
@@ -25,4 +25,4 @@ const Leaderboard = () => {
     )
 }
 
-export default Leaderboard
+export default LeaderBoard

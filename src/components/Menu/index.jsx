@@ -1,5 +1,5 @@
 
-function TaskList({ users, setUsers }) {
+function Menu({ users, setUsers }) {
 
 	function completeTask(users) {
 
@@ -16,4 +16,4 @@ function TaskList({ users, setUsers }) {
 	)
 }
 
-export default TaskList;
+export default Menu;
