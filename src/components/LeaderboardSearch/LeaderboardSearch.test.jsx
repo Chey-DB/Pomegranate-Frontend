@@ -35,9 +35,7 @@ describe("LeaderboardSearch Component", () => {
 
         render(<LeaderboardSearch />)
 
-        await waitFor(() => {
-            const LeaderboardItems = screen.getAllByRole("leaderboard-item");
-            expect(LeaderboardItems).toHaveLength(userData.length);
-        })
+        const LeaderboardItems = await screen.findAllByRole("leaderboard-item");
+        expect(LeaderboardItems).toHaveLength(userData.length);
     })
 })

@@ -18,9 +18,11 @@ const SearchForm = ({ setInputText }) => {
             <form
                 role="search"
                 onSubmit={handleSubmit}
+                aria-label="leaderboard-search-form"
             >
                 <label htmlFor="users">Users</label>
                 <input
+                    role="search-input"
                     type="text"
                     id="users"
                     onChange={handleInput}
@@ -29,7 +31,7 @@ const SearchForm = ({ setInputText }) => {
                     required
                 />
 
-                <input type="submit" value="Search" />
+                <input type="submit" value="Search" aria-label="search-btn" />
             </form>
         </>
     )
