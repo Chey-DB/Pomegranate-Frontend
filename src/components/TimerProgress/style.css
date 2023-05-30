@@ -1,0 +1,8 @@
+.pg-container {
+  user-select:none;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

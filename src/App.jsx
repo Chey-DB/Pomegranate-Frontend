@@ -1,14 +1,19 @@
 import React from 'react'
+import './style.css'
+
+// Components
+import { Timer } from './components'
+
 
 function App() {
 
   return (
-    <div>
-      <h1>
-        App Component
-      </h1>
-    </div>
-  
+    <>
+
+        <h1>App Component</h1>
+
+        <Timer />
+    </>
   )
 }
 

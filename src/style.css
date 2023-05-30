@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+
+:root{
+  --default-color: #DC0000; 
+  --maroon: #850000;
+  --yellow: #FFDB89;
+  --cream: #FFF6C3;
+  --white: #FFFFFF;
+}
+
+* {
+  margin: unset;
+  padding: unset;
+}
+
+body {
+  background-color:var(--default-color);
+}
+
+/* Large screen sizes => 768px */
+@media screen and (min-width: 768px){
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: centre;
+    align-items: center;
+  }
+}
+
