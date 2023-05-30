@@ -4,7 +4,7 @@ import { LeaderboardItem, SearchForm } from "../../components"
 
 const LeaderboardSearch = () => {
     const [inputText, setInputText] = useState("");
-    const [userInfo, setUserInfo] = useState("");
+    const [userInfo, setUserInfo] = useState([]);
 
     useEffect(() => {
         const getUser = async () => {
@@ -24,8 +24,7 @@ const LeaderboardSearch = () => {
             <SearchForm setInputText={setInputText} />
 
             {
-                userInfo &&
-                userInfo.map(user => <LeaderboardItem key={user.id} user={user} />)
+                userInfo.map(user => <LeaderboardItem key={user.id} user={user} role="leaderboard-item" />)
             }
         </>
     )
