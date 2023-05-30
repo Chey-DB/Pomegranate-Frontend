@@ -10,13 +10,13 @@ const App = () => {
     <Routes>
       <Route>
         <Route path="/" element={<NavBar />}>
-          <Route index element={<Pages.Home />} />
+          <Route index element={<Pages.HomePage />} />
           {/* <Route path="/leaderboard" element={<Pages.Leaderboard />} /> */}
           {/* <Route path="/profile" element={<Pages.Profile />} /> */}
           <Route path="/login" element={<Pages.LoginPage />} />
           <Route path="/signup" element={<Pages.SignUpPage />} />
 
-          <Route path="*" element={<Pages.NotFound />} />
+          <Route path="*" element={<Pages.NotFoundPage />} />
         </Route>
       </Route>
     </Routes>
