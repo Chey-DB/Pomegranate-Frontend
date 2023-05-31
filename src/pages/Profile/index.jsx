@@ -1,8 +1,12 @@
 import React from 'react'
 
+import { Timer } from '../../components'
+
 const Profile = () => {
     return (
-        <div>Profile Page</div>
+        <div>
+            <Timer/>
+        </div>
     )
 }
 
