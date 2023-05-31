@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './login.css';
 
-const LoginPage = () => {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -28,12 +28,12 @@ const LoginPage = () => {
         <p className="form__description">Welcome to Pomegranate</p>
 
         <div className="form__group">
-          <input type="text" id="email" className="form__input" placeholder=" " autoComplete="off"  value={email} onChange={handleEmailChange}/>
+          <input type="text" id="email" className="form__input" placeholder=" " autoComplete="off" value={email} onChange={handleEmailChange} />
           <label htmlFor="email" className="form__label"> Email</label>
         </div>
 
         <div className="form__group">
-          <input type="password" id="password" className="form__input" placeholder=" " value={password} onChange={handlePasswordChange}/>
+          <input type="password" id="password" className="form__input" placeholder=" " value={password} onChange={handlePasswordChange} />
           <label htmlFor="password" className="form__label"> Password </label>
         </div>
 
@@ -44,4 +44,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default Login;
