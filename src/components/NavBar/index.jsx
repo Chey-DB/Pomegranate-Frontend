@@ -1,5 +1,6 @@
 import React from "react"
 import { NavLink, Outlet } from "react-router-dom"
+import logo from "../../assets/logo.png"
 import "./style.css"
 
 const NavBar = () => {
@@ -14,7 +15,10 @@ const NavBar = () => {
         <>
             <header>
                 <nav>
-                    <h2>Pomegranate</h2>
+                    <h2>
+                        <NavLink style={navA} to="/"><img src={logo} alt="logo" /></NavLink>
+                        Pomegranate
+                    </h2>
                     <ul className="nav-links">
                         <li><NavLink style={navA} to="/">Home</NavLink></li>
                         <li><NavLink style={navA} to="/leaderboard">Leaderboard</NavLink></li>
