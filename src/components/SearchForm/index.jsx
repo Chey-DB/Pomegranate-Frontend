@@ -17,6 +17,7 @@ const SearchForm = ({ setInputText }) => {
     return (
         <>
             <form
+                className="search-form"
                 role="search"
                 onSubmit={handleSubmit}
                 aria-label="leaderboard-search-form"
