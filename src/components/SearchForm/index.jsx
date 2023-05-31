@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import "./style.css"
 
 const SearchForm = ({ setInputText }) => {
     const [user, setUser] = useState("")
@@ -20,8 +21,9 @@ const SearchForm = ({ setInputText }) => {
                 onSubmit={handleSubmit}
                 aria-label="leaderboard-search-form"
             >
-                <label htmlFor="users">Users</label>
+                <label htmlFor="users"></label>
                 <input
+                    className="search-input"
                     role="search-input"
                     type="text"
                     id="users"
@@ -30,8 +32,7 @@ const SearchForm = ({ setInputText }) => {
                     placeholder="Find user"
                     required
                 />
-
-                <input type="submit" value="Search" aria-label="search-btn" />
+                <input className="search-button" type="submit" value="Search" aria-label="search-btn" />
             </form>
         </>
     )
