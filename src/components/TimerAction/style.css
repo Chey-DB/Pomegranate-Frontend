@@ -1,0 +1,100 @@
+.ta-container {
+
+}
+
+ button {
+  background-color: unset;
+  border: unset;
+  box-shadow: unset;
+  cursor: pointer;
+  font-family: "Rubik", sans-serif;
+}
+.btn-container{
+  margin-bottom: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+}
+
+.btn-container button {
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5);
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 2px solid var(--white);
+  transition: all 0.5ms ease-in-out;
+}
+
+.btn-container button:hover {
+  border-color: var(--yellow);
+  box-shadow: unset;
+}
+
+form {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+  /* display: none; */
+}
+
+input {
+  width: 100%;
+  border: unset;
+  padding: 0.3rem;
+}
+
+.used-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  padding-top: 0.5rem;
+}
+
+.used-timers h2,
+.reset button {
+  font-size: 1rem;
+  font-weight: 400;
+  white-space: nowrap;
+  color: var(--white);
+  font-family: "Rubik", sans-serif;
+}
+
+.used-container ul {
+  height: 50%;
+  overflow-y:scroll;
+  margin-top:1rem;
+}
+
+.used-container ul::-webkit-scrollbar {
+  display: none;
+}
+
+.reset {
+  display: flex;
+  align-items: flex-start; 
+  justify-content: flex-end;
+}
+
+.reset button {
+  color: var(--white);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0 ,0 ,0.5);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.reset button:hover {
+  border-color: var(--yellow);
+  box-shadow: unset;
+}
+
+.used-containers ul li {
+  margin-bottom: 0.3rem;
+}
+
+.used-containers ul li button {
+  color: var(--white);
+  font-family: "Rubik", sans-serif;
+}

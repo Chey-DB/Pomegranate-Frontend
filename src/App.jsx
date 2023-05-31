@@ -4,6 +4,12 @@ import * as Pages from "./pages"
 import { NavBar } from './components';
 // import "./App.css" 
 
+import React from 'react'
+import './style.css'
+
+
+
+
 
 const App = () => {
   return (
