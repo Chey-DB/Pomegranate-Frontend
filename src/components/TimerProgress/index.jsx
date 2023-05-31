@@ -9,6 +9,9 @@ const TimerProgress = ({
   stopTimer,
   countDownStarted,
   countDownTime,
+  working,
+  setPomodoroCount,
+  pomodoroCount
 }) => {
   
   const [seconds, minutes] = useCountDown({
@@ -25,8 +28,12 @@ const TimerProgress = ({
   useEffect(() => {
     if((minutes + seconds) <= 0){
       stopTimer();
-      alert('time up!')
-      return;
+
+      if (working == true) {
+        alert('nice work!') 
+        setPomodoroCount(pomodoroCount + 1)
+      } else {
+      alert('back to work!')}
     }
   }, [minutes,seconds])
 
