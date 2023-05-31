@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { Timer } from '../../components'
+import { Timer, Sounds} from '../../components'
 
 const Home = () => {
     return (
         <div>
-          <h1>HomePage</h1>
+          <Sounds/>
           <Timer/>
         </div>
     )
