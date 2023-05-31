@@ -16,8 +16,7 @@ describe("LeaderboardSearch Component", () => {
     })
 
     it("renders the search form", () => {
-        render(<LeaderboardSearch />)
-
+        render(<LeaderboardSearch users={[]} />)
         const searchForm = screen.getByRole("search")
         expect(searchForm).toBeInTheDocument();
     })
@@ -27,19 +26,18 @@ describe("LeaderboardSearch Component", () => {
         const userData = [{
             "id": 1,
             "username": "testUser",
-            "pomodoroCountTotal": 10
+            "pomodoroCount": 10
         },
         {
             "id": 2,
             "username": "testUser2",
-            "pomodoroCountTotal": 11
+            "pomodoroCount": 11
         }]
 
         vi.spyOn(axios, "get").mockResolvedValue({ data: userData });
+        render(<LeaderboardSearch users={userData} />)
 
-        render(<LeaderboardSearch />)
-
-        const LeaderboardItems = await screen.findAllByRole("leaderboard-item");
+        const LeaderboardItems = await screen.findAllByRole("leaderboard-items");
         expect(LeaderboardItems).toHaveLength(userData.length);
     })
 })
