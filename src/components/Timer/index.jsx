@@ -12,8 +12,8 @@ const Timer = () => {
   const [countDownStarted, setCountDownStarted] = useState(false)
   /* time in milliseconds */
   const [timeInMilliseconds, setTimeInMilliseconds] = useState(0)
-  /*used timers */
-  const [usedTimes, setUsedTimes] = useState([])
+  const [working, setWorking] = useState(false)
+  const [pomodoroCount, setPomodoroCount] = useState(0)
 
   /* Start Timer */
   const startTimer = () => {
@@ -22,8 +22,6 @@ const Timer = () => {
     if (toggleForm){setToggleForm(false)}
     // set new timer minutes(milliseconds)
     setTimeInMilliseconds(timeInput * 60 * 1000)
-    //add the time to used times
-    setUsedTimes(times => [...times, timeInput])
   }
   /* Stop Timer */
   const stopTimer = () => {
@@ -41,6 +39,24 @@ const Timer = () => {
     setTimeInput(inputData);
   }
 
+  const pomodoroTime = () => {
+    setTimeInput(0.2)
+    document.getElementById('timer').style.backgroundColor = 'red'
+    setWorking(true)
+  }
+
+  const shortBreakTime = () => {
+    setTimeInput(0.1)
+    document.getElementById('timer').style.backgroundColor = 'blue'
+    setWorking(false)
+  }
+  
+  const longBreakTime = () => {
+    setTimeInput(0.15)
+    document.getElementById('timer').style.backgroundColor = 'green'
+    setWorking(false)
+  }
+
   // get time ahead in milliseconds
   const countDownTime = new Date().getTime() + timeInMilliseconds;
 
@@ -49,13 +65,16 @@ const Timer = () => {
 
   return (
     <div className="timerContainer">
-      <div className ="timer">
+      <div id='timer' className ="timer">
       <TimerProgress {...{
         timeInMilliseconds,
         stopTimer,
         countDownStarted,
         countDownTime,
-        animationDuration
+        animationDuration,
+        working,
+        setPomodoroCount,
+        pomodoroCount
       }}
       />
       <TimerAction {...{
@@ -66,11 +85,13 @@ const Timer = () => {
         countDownStarted,
         startTimer,
         stopTimer,
-        usedTimes,
-        setUsedTimes
+        pomodoroTime,
+        shortBreakTime,
+        longBreakTime,
       }}
        />
       </div>
+      <h2>Pomodoro count is {pomodoroCount}</h2>
     </div>
   )
 }

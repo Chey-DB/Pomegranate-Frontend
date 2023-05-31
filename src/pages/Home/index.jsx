@@ -4,7 +4,8 @@ import { Timer } from '../../components'
 
 const Home = () => {
     return (
-        <div>HomePage
+        <div>
+          <h1>HomePage</h1>
           <Timer/>
         </div>
     )

@@ -9,34 +9,10 @@ const TimerAction = ({
   countDownStarted,
   startTimer,
   stopTimer,
-  setUsedTimes,
-  usedTimes,
+  pomodoroTime,
+  shortBreakTime,
+  longBreakTime,
 }) => {
-  const [mostUsedObj, setMostUsedObj] = useState([])
-
-  const onReset = () => {
-    setMostUsedObj([])
-    setUsedTimes([])
-  }
-
-  useEffect(() => {
-    let numMap = {}
-
-    usedTimes.forEach(function(num){
-      if(numMap[num]){
-        numMap[num]++
-      } else {
-        numMap[num] = 1
-      }
-    })
-    //sorted array
-    let sorted = []
-    for (var num in numMap){
-      sorted.push([num,numMap[num]])
-    }
-    sorted.sort((a,b) => (a[1] - b[1]));
-    setMostUsedObj(sorted)
-  },[usedTimes])
 
   return (
     <div className='ta-container'>
@@ -45,6 +21,7 @@ const TimerAction = ({
         <button onClick={startTimer}> Start </button> :
         <button onClick={stopTimer}> Stop </button>}
         <button onClick={onToggle}> Set Time </button>
+        
       </div>
 
       {toggleForm ?
@@ -56,24 +33,12 @@ const TimerAction = ({
         />
       </div> : null}
 
-      <div className='used-containers'>
-        <div className='used-timers'>
-          <h2>Most used timers</h2>
-          <ul>
-            {mostUsedObj.map((time,key) => 
-              <li key={key}><button>
-                {time[0]} mins
-                </button></li>
-            )}
-            {/* <li><button> 25 mins</button></li>
-            <li><button> 5 mins</button></li>
-            <li><button> 15 mins</button></li> */}
-          </ul>
-        </div>
+      <div className='pomodoro-container'>
+        <div className='pomodoro-timer'>
+        <button onClick={pomodoroTime}> Pomodoro </button>
+        <button onClick={shortBreakTime}> Short Break </button>
+        <button onClick={longBreakTime}> Long Break </button>
 
-        <div className='reset'>
-          <button
-          onClick={onReset}>Clear</button>
         </div>
 
       </div>
