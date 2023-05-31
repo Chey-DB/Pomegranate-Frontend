@@ -35,7 +35,7 @@ describe("SearchForm Component", () => {
 
         render(<SearchForm setInputText={setInputText} inputText={inputText} />);
         const searchBox = screen.getByRole("search-input");
-        const submitButton = screen.getByRole("button", "search-btn");
+        const submitButton = screen.getByRole("search-btn");
 
         await userEvent.type(searchBox, "username2");
         await userEvent.click(submitButton);

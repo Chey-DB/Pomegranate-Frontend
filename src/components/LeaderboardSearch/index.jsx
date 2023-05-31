@@ -4,22 +4,28 @@ import { LeaderboardItem, SearchForm } from "../../components"
 
 const LeaderboardSearch = ({ users }) => {
     const [inputText, setInputText] = useState("");
-    const [userInfo, setUserInfo] = useState([]);
+    const [userInfo, setUserInfo] = useState(null);
 
     useEffect(() => {
         const getUser = async () => {
             try {
                 const result = await axios.get(`http://localhost:3000/users/${inputText}`)
                 const data = result.data;
-                setUserInfo(data.user);
+
+                const updatedUser = { ...data.user };
+                const existingRankedUser = users.find(user => user.id === updatedUser.id);
+
+                existingRankedUser ? updatedUser.rank = existingRankedUser.rank : "";
+
+                setUserInfo(updatedUser);
             } catch (err) {
                 console.log(err.message)
             }
         }
 
-        getUser()
+        inputText ? getUser() : setUserInfo(null);
 
-    }, [inputText])
+    }, [inputText, users])
 
     return (
         <>

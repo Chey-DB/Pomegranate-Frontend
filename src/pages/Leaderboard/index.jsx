@@ -10,7 +10,9 @@ const Leaderboard = () => {
             try {
                 const response = await axios.get("http://localhost:3000/users")
                 const data = response.data;
-                setUsers(data.users);
+                const sortedUsers = data.users.sort((a, b) => b.pomodoroCount - a.pomodoroCount);
+                const rankedUsers = sortedUsers.map((user, idx) => ({ ...user, rank: idx + 1 }));
+                setUsers(rankedUsers);
             } catch (error) {
                 console.log(error.message)
             }

@@ -33,7 +33,7 @@ const SearchForm = ({ setInputText }) => {
                     placeholder="Find user"
                     required
                 />
-                <input className="form-button" type="submit" value="Search" aria-label="search-btn" />
+                <input className="form-button" type="submit" value="Search" aria-label="search-btn" role="search-btn" />
                 <input className="form-button" type="button" value="Reset" aria-label="reset-btn" onClick={() => { window.location.reload() }} />
             </form>
         </>
