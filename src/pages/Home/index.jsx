@@ -1,8 +1,12 @@
 import React from 'react'
 
+import { Timer } from '../../components'
+
 const Home = () => {
     return (
-        <div>Home Page</div>
+        <div>HomePage
+          <Timer/>
+        </div>
     )
 }
 

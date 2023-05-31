@@ -1,0 +1,27 @@
+.timerContainer {
+  display: grid;
+  grid-auto-rows: 539px;
+  padding: 1rem 0rem;
+}
+
+.timer {
+  margin: 0.5rem auto;
+  border: 2px solid var(--cream);
+  width: 277px;
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  cursor:pointer;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: 50% 50%
+}
+
+@media screen and (min-width: 768px){
+  .timerContainer {
+    padding: unset;
+    max-width: 750px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+  }
+}
