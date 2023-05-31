@@ -26,9 +26,19 @@ describe('Timer', () => {
     expect(startButton).toBeInTheDocument();
   });
 
-  it("renders a 'Clear' button", () => {
-    const clearButton = screen.getByRole('button', { name: /Clear/i });
-    expect(clearButton).toBeInTheDocument();
+  it("renders a 'Pomodoro' button", () => {
+    const pomButton = screen.getByRole('button', { name: /Pomodoro/i });
+    expect(pomButton).toBeInTheDocument();
+  });
+
+  it("renders a 'Short Break' button", () => {
+    const shortBreakButton = screen.getByRole('button', { name: /Short Break/i });
+    expect(shortBreakButton).toBeInTheDocument();
+  });
+
+  it("renders a 'Long Break' button", () => {
+    const longBreakButton = screen.getByRole('button', { name: /Long Break/i });
+    expect(longBreakButton).toBeInTheDocument();
   });
 
   it("renders a 'Stop' button once 'Start' button is pressed", () => {
@@ -39,15 +49,17 @@ describe('Timer', () => {
     const stopButton = screen.getByRole('button', { name: /Stop/i });
     expect(stopButton).toBeInTheDocument()
   });
+  
+  it("renders an input field for entering time when 'Set Time' is clicked", () => {
+    const setTimeButton = screen.getByRole('button', { name: /Set Time/i });
+    userEvent.click(setTimeButton);
+    const input = screen.getByRole('input')
+    expect(input).toBeInTheDocument()
+  })
 
 })
 
 
 
-  // it("renders an input field for entering time when 'Set Time' is clicked", () => {
-  //   const setTimeButton = screen.getByRole('button', { name: /Set Time/i });
-  //   userEvent.click(setTimeButton);
-  //   const input = screen.getByRole('input')
-  //   expect(input).toBeInTheDocument()
-  // })
+  
 
