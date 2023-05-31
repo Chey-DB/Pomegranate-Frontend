@@ -10,7 +10,7 @@ const Leaderboard = () => {
             try {
                 const response = await axios.get("http://localhost:3000/users")
                 const data = response.data;
-                setUsers(data);
+                setUsers(data.users);
             } catch (error) {
                 console.log(error.message)
             }

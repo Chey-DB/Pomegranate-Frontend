@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { LeaderboardItem, SearchForm } from "../../components"
 
-const LeaderboardSearch = () => {
+const LeaderboardSearch = ({ users }) => {
     const [inputText, setInputText] = useState("");
     const [userInfo, setUserInfo] = useState([]);
 
@@ -11,12 +11,14 @@ const LeaderboardSearch = () => {
             try {
                 const result = await axios.get(`http://localhost:3000/users/${inputText}`)
                 const data = result.data;
-                setUserInfo(data);
+                setUserInfo(data.user);
             } catch (err) {
                 console.log(err.message)
             }
         }
+
         getUser()
+
     }, [inputText])
 
     return (
@@ -24,7 +26,11 @@ const LeaderboardSearch = () => {
             <SearchForm setInputText={setInputText} />
 
             {
-                userInfo.map(user => <LeaderboardItem key={user.id} user={user} role="leaderboard-item" />)
+                userInfo ? (
+                    <LeaderboardItem user={userInfo} />
+                ) : (
+                    users.map(user => <LeaderboardItem key={user.id} user={user} role="leaderboard-items" />)
+                )
             }
         </>
     )
