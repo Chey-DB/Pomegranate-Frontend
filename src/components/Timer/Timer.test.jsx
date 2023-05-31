@@ -1,6 +1,6 @@
 import React from 'react';
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { screen, render, cleanup } from '@testing-library/react';
+import { screen, render, cleanup, rerender } from '@testing-library/react';
 import userEvent from "@testing-library/user-event";
 import matchers from '@testing-library/jest-dom/matchers';
 expect.extend(matchers);
@@ -35,6 +35,7 @@ describe('Timer', () => {
     const startButton = screen.getByRole('button', { name: /Start/i });
     expect(startButton).toBeInTheDocument();
     userEvent.click(startButton)
+    rerender(<Timer />)
     const stopButton = screen.getByRole('button', { name: /Stop/i });
     expect(stopButton).toBeInTheDocument()
   });

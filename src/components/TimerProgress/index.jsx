@@ -1,7 +1,7 @@
-import React, { useEffect, memo} from 'react'
+import React, { useEffect, memo, useState} from 'react'
 import styled, {keyframes, css} from 'styled-components'
 import './style.css'
-import { useCountDown } from '../../hooks'
+import { useCountDown, useDidMountEffect } from '../../hooks'
 
 const TimerProgress = ({
   timeInMilliseconds,
@@ -11,8 +11,12 @@ const TimerProgress = ({
   countDownTime,
   working,
   setPomodoroCount,
-  pomodoroCount
+  pomodoroCount,
+  pomodoroTime,
+  shortBreakTime
 }) => {
+
+  
   
   const [seconds, minutes] = useCountDown({
     timeInMilliseconds,
@@ -24,18 +28,40 @@ const TimerProgress = ({
   const cMin = minutes < 10 ? `0` + minutes : minutes
   const cSecs = seconds < 10 ? `0` + seconds : seconds
 
-  //stop timer and reset/
+  // stop timer and reset/
   useEffect(() => {
+    
     if((minutes + seconds) <= 0){
       stopTimer();
 
       if (working == true) {
-        alert('nice work!') 
         setPomodoroCount(pomodoroCount + 1)
+        confirm('nice work!') 
+        ?
+        shortBreakTime() :
+        null
       } else {
-      alert('back to work!')}
+        confirm('back to work!') ?
+        pomodoroTime() :
+        null
+      } 
+
+
     }
-  }, [minutes,seconds])
+  }, [minutes,seconds]); 
+
+  // useDidMountEffect(() => {
+  //   if((minutes + seconds) <= 0){
+  //     stopTimer();
+
+  //     if (working == true) {
+  //       // alert('nice work!') 
+  //       setOpen(o => !o)
+  //       setPomodoroCount(pomodoroCount + 1)
+  //     } else {
+  //       alert('back to work!')}
+  //   }
+  // }, [minutes,seconds]); 
 
 
   return (

@@ -15,6 +15,7 @@ const Timer = () => {
   const [working, setWorking] = useState(false)
   const [pomodoroCount, setPomodoroCount] = useState(0)
 
+
   /* Start Timer */
   const startTimer = () => {
     setCountDownStarted(true)
@@ -43,18 +44,21 @@ const Timer = () => {
     setTimeInput(0.2)
     document.getElementById('timer').style.backgroundColor = 'red'
     setWorking(true)
+    stopTimer()
   }
 
   const shortBreakTime = () => {
     setTimeInput(0.1)
     document.getElementById('timer').style.backgroundColor = 'blue'
     setWorking(false)
+    stopTimer()
   }
   
   const longBreakTime = () => {
-    setTimeInput(0.15)
+    setTimeInput(0.1)
     document.getElementById('timer').style.backgroundColor = 'green'
     setWorking(false)
+    stopTimer()
   }
 
   // get time ahead in milliseconds
@@ -64,35 +68,44 @@ const Timer = () => {
   const animationDuration = ((countDownTime - new Date().getTime()) / 1000 / 2)
 
   return (
-    <div className="timerContainer">
-      <div id='timer' className ="timer">
-      <TimerProgress {...{
-        timeInMilliseconds,
-        stopTimer,
-        countDownStarted,
-        countDownTime,
-        animationDuration,
-        working,
-        setPomodoroCount,
-        pomodoroCount
-      }}
-      />
-      <TimerAction {...{
-        toggleForm,
-        onToggle,
-        handleChange,
-        timeInput,
-        countDownStarted,
-        startTimer,
-        stopTimer,
-        pomodoroTime,
-        shortBreakTime,
-        longBreakTime,
-      }}
-       />
+    <>
+      {working
+        ? <h2>Time for work</h2>
+        : <h2>Time for rest</h2>
+      }
+      <div className="timerContainer">
+        <div id='timer' className ="timer">
+        <TimerProgress {...{
+          timeInMilliseconds,
+          stopTimer,
+          countDownStarted,
+          countDownTime,
+          animationDuration,
+          working,
+          setPomodoroCount,
+          pomodoroCount,
+          pomodoroTime,
+          shortBreakTime
+
+        }}
+        />
+        <TimerAction {...{
+          toggleForm,
+          onToggle,
+          handleChange,
+          timeInput,
+          countDownStarted,
+          startTimer,
+          stopTimer,
+          pomodoroTime,
+          shortBreakTime,
+          longBreakTime,
+        }}
+        />
+        </div>
+        <h2>Pomodoro count is {pomodoroCount}</h2>
       </div>
-      <h2>Pomodoro count is {pomodoroCount}</h2>
-    </div>
+    </>
   )
 }
 export default memo(Timer)
