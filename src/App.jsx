@@ -4,7 +4,6 @@ import * as Pages from "./pages"
 import { NavBar } from './components';
 // import "./App.css" 
 
-import React from 'react'
 import './style.css'
 
 
@@ -16,7 +15,7 @@ const App = () => {
     <Routes>
       <Route>
         <Route path="/" element={<NavBar />}>
-          <Route index element={<Pages.Home />} />
+          <Route index element={<Pages.HomePage />} />
           {/* <Route path="/leaderboard" element={<Pages.Leaderboard />} /> */}
           {/* <Route path="/profile" element={<Pages.Profile />} /> */}
           <Route path="/login" element={<Pages.LoginPage />} />
