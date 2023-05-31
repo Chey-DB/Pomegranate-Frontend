@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Timer } from '../../components'
 
-const HomePage = () => {
+const Home = () => {
     return (
         <div>HomePage
           <Timer/>
@@ -10,4 +10,4 @@ const HomePage = () => {
     )
 }
 
-export default HomePage
+export default Home
