@@ -1,7 +1,9 @@
 import React, { useEffect, memo, useState} from 'react'
 import styled, {keyframes, css} from 'styled-components'
+import axios from "axios"
 import './style.css'
 import { useCountDown } from '../../hooks'
+import { useParams } from 'react-router-dom';
 
 const TimerProgress = ({
   timeInMilliseconds,
@@ -16,7 +18,7 @@ const TimerProgress = ({
   shortBreakTime
 }) => {
 
-  
+  const {username} = useParams()
   
   const [seconds, minutes] = useCountDown({
     timeInMilliseconds,
@@ -24,6 +26,29 @@ const TimerProgress = ({
     countDownTime,
   })
 
+  const addPomodoro = async () => { 
+
+    fetch(`https://pomegranate-backend.onrender.com/users/${username}/pomodoro`, {
+      method: "PATCH",
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+  }
+
+    
+  const getPomodoroCount = async () => {
+    try {
+        const data = await axios.get(`https://pomegranate-backend.onrender.com/users/${username}`)
+        // console.log(data)
+        const count = data.data.user.pomodoroCountTotal;
+        setPomodoroCount(count)
+    } catch (err) {
+        console.log(err.message)
+        console.log('in the catch')
+    }
+  }
+  getPomodoroCount()
   /* custom times */
   const cMin = minutes < 10 ? `0` + minutes : minutes
   const cSecs = seconds < 10 ? `0` + seconds : seconds
@@ -35,7 +60,8 @@ const TimerProgress = ({
       stopTimer();
 
       if (working == true) {
-        setPomodoroCount(pomodoroCount + 1)
+        addPomodoro()
+        
         confirm('nice work!') 
         ?
         shortBreakTime() :
@@ -45,10 +71,10 @@ const TimerProgress = ({
         pomodoroTime() :
         null
       } 
-
-
     }
   }, [minutes,seconds]); 
+
+
 
   return (
     <div className='pg-container'>
