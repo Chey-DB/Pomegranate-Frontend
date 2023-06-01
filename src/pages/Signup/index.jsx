@@ -4,7 +4,7 @@ import { useNavigate, Link } from "react-router-dom"
 import "./style.css"
 
 function SignUp() {
-    const history = useNavigate();
+    const navigate = useNavigate();
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -13,22 +13,20 @@ function SignUp() {
         e.preventDefault();
 
         try {
-            await axios.post("http://localhost:3000/signup", {
-                username, password
+            const response = await fetch("http://localhost:3000/users/register", {
+                method: "POST",
+                body: JSON.stringify({ username: username, password: password }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
             })
-                .then(res => {
-                    if (res.data == "exist") {
-                        alert("User already exists")
-                    }
-                    else if (res.data == "notexist") {
-                        history("/home", { state: { id: username } })
-                    }
-                })
-                .catch(e => {
-                    alert("wrong details")
-                    console.log(e);
-                })
 
+            const data = await response.json();
+            if (data.error) {
+                alert(data.error, "error")
+            } else {
+                navigate("/login")
+            }
         }
         catch (e) {
             console.log(e);

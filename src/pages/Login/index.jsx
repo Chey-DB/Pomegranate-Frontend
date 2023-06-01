@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './login.css';
 
 const Login = () => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -14,9 +15,25 @@ const Login = () => {
     setPassword(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
+
     // ill use this to send to Be
     event.preventDefault();
+    const response = await fetch("http://localhost:3000/users/login", {
+      method: "POST",
+      body: JSON.stringify({ username: username, password: password }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+
+    const data = await response.json();
+    if (data.error) {
+      alert(data.error, "error")
+    } else {
+      navigate("/profile")
+    }
+
     console.log('username:', username);
     console.log('Password:', password);
   };

@@ -8,7 +8,7 @@ const Leaderboard = () => {
     useEffect(() => {
         async function fetchUsers() {
             try {
-                const response = await axios.get("https://pomegranate-backend.onrender.com/users")
+                const response = await axios.get("http://localhost:3000/users")
                 const data = response.data;
                 const sortedUsers = data.users.sort((a, b) => b.pomodoroCount - a.pomodoroCount);
                 const rankedUsers = sortedUsers.map((user, idx) => ({ ...user, rank: idx + 1 }));
