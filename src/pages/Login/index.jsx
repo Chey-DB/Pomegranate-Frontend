@@ -32,7 +32,8 @@ const Login = () => {
     if (data.error) {
       alert(data.error, "error")
     } else {
-      navigate(`/profile/${username}`)
+      localStorage.setItem("isLoggedIn", "true");
+      navigate(`/profile/${username}`);
     }
 
     console.log('username:', username);
