@@ -38,6 +38,7 @@ const Tasks = () => {
                         tasks={tasks}
                         setTasks={setTasks}
                         setEditTask={setEditTask}
+                        username={username}
                     />
                 </div>
             </div>
