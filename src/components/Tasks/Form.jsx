@@ -28,7 +28,7 @@ const Form = ({ input, setInput, tasks, setTasks, editTask, setEditTask, usernam
 
         if (!editTask) {
             console.log(input)
-            fetch(`http://localhost:3000/users/${username}/tasks`, {
+            fetch(`https://pomegranate-backend.onrender.com/users/${username}/tasks`, {
                 method: "POST",
                 body: JSON.stringify({ description: input, completed: false }),
                 headers: {

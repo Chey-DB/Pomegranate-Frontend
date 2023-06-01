@@ -15,7 +15,7 @@ const TaskList = ({ tasks, setTasks, setEditTask, username }) => {
 
     const handleDelete = (task, idx) => {
         const { id } = task;
-        fetch(`http://localhost:3000/users/${username}/tasks/${idx}`, {
+        fetch(`https://pomegranate-backend.onrender.com/users/${username}/tasks/${idx}`, {
             method: "DELETE",
             body: JSON.stringify({ description: tasks.title, completed: tasks.completed }),
             headers: {

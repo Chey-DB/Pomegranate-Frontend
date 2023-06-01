@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 
-function Menu() {
+function Menu({ username }) {
 
     const [users, setUsers] = useState([]);
 
@@ -13,7 +13,7 @@ function Menu() {
 
     const tasks = async () => {
         try {
-            const response = await fetch("http://localhost:3000/users/c")
+            const response = await fetch(`https://pomegranate-backend.onrender.com/users/${username}`)
             const data = await response.json();
             console.log(data.user.tasks)
             setUsers(data.user.tasks)
