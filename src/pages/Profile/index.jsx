@@ -1,8 +1,8 @@
 import React from 'react'
 import { useParams } from 'react-router'
 import "./styles.css"
-
-import { Menu, Tasks, Timer } from '../../components'
+// import { Menu } from '../../components'
+import { Tasks, Timer } from '../../components'
 
 const Profile = () => {
     const { username } = useParams();
@@ -10,7 +10,7 @@ const Profile = () => {
         <div className='profile-container'>         <Timer />
             {/* <Menu username={username} /> */}
             <Tasks />
-              
+
         </div>
     )
 }
