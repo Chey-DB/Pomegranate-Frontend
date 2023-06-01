@@ -31,7 +31,7 @@ const TimerProgress = ({
   // stop timer and reset/
   useEffect(() => {
     
-    if((minutes + seconds) <= 0){
+    if((minutes + seconds) <= -1){
       stopTimer();
 
       if (working == true) {

@@ -1,6 +1,6 @@
-.ta-container {
+/* .ta-container {
 
-}
+} */
 
  button {
   background-color: unset;
@@ -81,3 +81,14 @@ input {
   box-shadow: unset;
 }
 
+#pomodoro {
+  background-color: var(--maroon)
+}
+
+#short {
+  background-color: #008585
+}
+
+#long {
+  background-color: #430085
+}
