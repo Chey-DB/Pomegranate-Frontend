@@ -7,6 +7,7 @@ const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+
   const handleusernameChange = (event) => {
     setUsername(event.target.value);
   };
@@ -16,9 +17,9 @@ const Login = () => {
   };
 
   const handleSubmit = async (event) => {
-
     // ill use this to send to Be
     event.preventDefault();
+
     const response = await fetch("https://pomegranate-backend.onrender.com/users/login", {
       method: "POST",
       body: JSON.stringify({ username: username, password: password }),
@@ -31,7 +32,7 @@ const Login = () => {
     if (data.error) {
       alert(data.error, "error")
     } else {
-      navigate("/profile")
+      navigate(`/profile/${username}`)
     }
 
     console.log('username:', username);

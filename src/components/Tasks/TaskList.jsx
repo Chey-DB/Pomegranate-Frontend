@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TaskList = ({ tasks, setTasks, setEditTask }) => {
+const TaskList = ({ tasks, setTasks, setEditTask, username }) => {
 
     const handleComplete = (task) => {
         setTasks(
@@ -13,9 +13,9 @@ const TaskList = ({ tasks, setTasks, setEditTask }) => {
         )
     }
 
-    const handleDelete = ({ id }) => {
-        console.log(tasks)
-        fetch(`http://localhost:3000/users/c/tasks/0`, {
+    const handleDelete = (task, idx) => {
+        const { id } = task;
+        fetch(`http://localhost:3000/users/${username}/tasks/${idx}`, {
             method: "DELETE",
             body: JSON.stringify({ description: tasks.title, completed: tasks.completed }),
             headers: {
@@ -37,10 +37,9 @@ const TaskList = ({ tasks, setTasks, setEditTask }) => {
         setEditTask(findTask);
     }
 
-
     return (
         <div>
-            {tasks.map((task) => (
+            {tasks.map((task, idx) => (
                 <li className="task_list" key={task.id}>
 
                     <input
@@ -57,7 +56,7 @@ const TaskList = ({ tasks, setTasks, setEditTask }) => {
                         <button className='button_edit task_button' onClick={() => handleEdit(task)}>
                             <i className='fa fa-edit'></i>
                         </button>
-                        <button className='button_delete task_button' onClick={() => handleDelete(task)}>
+                        <button className='button_delete task_button' onClick={() => handleDelete(task, idx)}>
                             <i className='fa fa-trash'></i>
                         </button>
                     </div>

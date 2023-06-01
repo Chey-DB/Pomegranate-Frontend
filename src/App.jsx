@@ -12,7 +12,7 @@ const App = () => {
         <Route path="/" element={<NavBar />}>
           <Route index element={<Pages.Home />} />
           <Route path="/leaderboard" element={<Pages.Leaderboard />} />
-          <Route path="/profile" element={<Pages.Profile />} />
+          <Route path="/profile/:username" element={<Pages.Profile />} />
           <Route path="/login" element={<Pages.Login />} />
           <Route path="/signup" element={<Pages.Signup />} />
 
