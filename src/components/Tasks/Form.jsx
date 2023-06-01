@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { v4 as uuidv4 } from "uuid";
 
-const Form = ({ input, setInput, tasks, setTasks, editTask, setEditTask }) => {
+const Form = ({ input, setInput, tasks, setTasks, editTask, setEditTask, username }) => {
 
     const updateTask = (title, id, completed) => {
         const newTask = tasks.map((task) => task.id === id ? { title, id, completed } : task
@@ -28,7 +28,7 @@ const Form = ({ input, setInput, tasks, setTasks, editTask, setEditTask }) => {
 
         if (!editTask) {
             console.log(input)
-            fetch("http://localhost:3000/users/c/tasks", {
+            fetch(`http://localhost:3000/users/${username}/tasks`, {
                 method: "POST",
                 body: JSON.stringify({ description: input, completed: false }),
                 headers: {

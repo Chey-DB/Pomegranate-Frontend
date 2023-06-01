@@ -14,7 +14,7 @@ const TaskList = ({ tasks, setTasks, setEditTask }) => {
     }
 
     const handleDelete = ({ id }) => {
-        console.log(tasks)
+        console.log(id)
         fetch(`http://localhost:3000/users/c/tasks/0`, {
             method: "DELETE",
             body: JSON.stringify({ description: tasks.title, completed: tasks.completed }),
