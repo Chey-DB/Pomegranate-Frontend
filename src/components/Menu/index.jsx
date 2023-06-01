@@ -3,25 +3,37 @@ import { useState, useEffect } from "react";
 
 function Menu() {
 
-    const [users, setUsers ] = useState();
+    const [users, setUsers ] = useState([]);
 
 
     useEffect(() => {
         tasks()
     }, [])
 
+
 	const tasks = async () => {
-        const response = await fetch("http://localhost:3000/users") 
+        try{
+        const response = await fetch("https://localhost:3000/users") 
 
         setUsers(await response.json())
+        }catch(error)
+        {
+            console.log(error);
+        }
     }
 
 	return (
 		<div className="task-list">
             <h1>Tasks</h1>
 			<ul>
-				{users.tasks.map((data) => {
-                    return (<li className="task-list" key={data.id}>{data.tasks.description}</li>)
+				{users.map((data) => {
+                    return (
+                    <li className="task-list" key={data.username}>
+                        
+                        Description: {data.task.description} 
+                        Completed: {data.task.completed}
+                    </li>
+                    )
                 })}
 			</ul>
 		</div>
