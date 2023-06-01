@@ -1,7 +1,7 @@
 import React, { useEffect, memo, useState} from 'react'
 import styled, {keyframes, css} from 'styled-components'
 import './style.css'
-import { useCountDown, useDidMountEffect } from '../../hooks'
+import { useCountDown } from '../../hooks'
 
 const TimerProgress = ({
   timeInMilliseconds,
@@ -49,20 +49,6 @@ const TimerProgress = ({
 
     }
   }, [minutes,seconds]); 
-
-  // useDidMountEffect(() => {
-  //   if((minutes + seconds) <= 0){
-  //     stopTimer();
-
-  //     if (working == true) {
-  //       // alert('nice work!') 
-  //       setOpen(o => !o)
-  //       setPomodoroCount(pomodoroCount + 1)
-  //     } else {
-  //       alert('back to work!')}
-  //   }
-  // }, [minutes,seconds]); 
-
 
   return (
     <div className='pg-container'>
