@@ -13,7 +13,7 @@ function SignUp() {
         e.preventDefault();
 
         try {
-            const response = await fetch("http://localhost:3000/users/register", {
+            const response = await fetch("https://pomegranate-backend.onrender.com/users/register", {
                 method: "POST",
                 body: JSON.stringify({ username: username, password: password }),
                 headers: {
