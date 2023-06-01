@@ -35,9 +35,9 @@ const TimerAction = ({
 
       <div className='pomodoro-container'>
         <div className='pomodoro-timer'>
-        <button onClick={pomodoroTime}> Pomodoro </button>
-        <button onClick={shortBreakTime}> Short Break </button>
-        <button onClick={longBreakTime}> Long Break </button>
+        <button id='pomodoro' onClick={pomodoroTime}> Pomodoro </button>
+        <button id='short' onClick={shortBreakTime}> Short Break </button>
+        <button id='long' onClick={longBreakTime}> Long Break </button>
 
         </div>
 

@@ -16,7 +16,7 @@
 body {
   display: flex;
   justify-content: center;
-  background-color: var(--default-color);
+  background-color: var(--white);
 }
 
 #root {

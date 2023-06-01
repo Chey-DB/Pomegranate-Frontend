@@ -1,29 +1,35 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import rain from "../../assets/loud-rain.wav";
 import white from "../../assets/white-noise.wav"
 
 const Sounds = () => {
-  const audio = new Audio(rain);
-  audio.loop = true;
-  // const [audio, setAudio] = useState()
+
+  const tracks = {
+    WhiteNoise: white,
+    Rain: rain
+  }
+  
+  
+  const [track, setTrack] = useState()
+
+  useEffect(() => { let audio = new Audio(track)
+    audio.loop = true
+  },[track])
 
   return (
     <div>
-      {/* <label> Select relaxing sound :
+      <label> Select relaxing sound :
         <select
-          value={audio}
-          onChange={e => setAudio(e.target.value)}
-        >
-          <option>
-            white
-          </option>
-          <option>
-            rain
-          </option>
-
+          value={track}
+          onChange={e => setTrack(e.target.value)}
+          > {Object.entries(tracks).map(([name, value]) =>(
+            <option key={`${name}`} value={value}>
+              {name}
+            </option>
+          ))}
         </select>
-      </label> */}
+      </label>
       <button
         onClick={() => {
           audio.loop = true;

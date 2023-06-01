@@ -42,21 +42,21 @@ const Timer = () => {
 
   const pomodoroTime = () => {
     setTimeInput(1)
-    document.getElementById('timer').style.backgroundColor = 'red'
+    document.getElementById('timer').style.backgroundColor = 'var(--maroon)'
     setWorking(true)
     stopTimer()
   }
 
   const shortBreakTime = () => {
     setTimeInput(0.1)
-    document.getElementById('timer').style.backgroundColor = 'blue'
+    document.getElementById('timer').style.backgroundColor = '#008585'
     setWorking(false)
     stopTimer()
   }
   
   const longBreakTime = () => {
     setTimeInput(0.1)
-    document.getElementById('timer').style.backgroundColor = 'green'
+    document.getElementById('timer').style.backgroundColor = '#430085'
     setWorking(false)
     stopTimer()
   }
@@ -69,10 +69,12 @@ const Timer = () => {
 
   return (
     <>
+      <div className='workingContainer'>
       {working
         ? <h2>Time for work</h2>
         : <h2>Time for rest</h2>
       }
+      </div>
       <div className="timerContainer">
         <div id='timer' className ="timer">
         <TimerProgress {...{
@@ -103,7 +105,9 @@ const Timer = () => {
         }}
         />
         </div>
-        <h2>Pomodoro count is {pomodoroCount}</h2>
+        <div className='countContainer'>
+          <h2>Pomodoro count is {pomodoroCount}</h2>
+        </div>
       </div>
     </>
   )
