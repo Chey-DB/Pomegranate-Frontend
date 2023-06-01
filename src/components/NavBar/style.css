@@ -5,9 +5,9 @@ nav {
     align-items: center;
     background: firebrick;
     color: white;
-    border-radius: 10px;
     padding: 20px;
     margin-bottom: 50px;
+    width: 100%;
 }
 
 h2 {
@@ -45,4 +45,8 @@ h2 img {
     text-decoration-thickness: 3px;
     text-underline-position: under;
     text-decoration-color: #850000;
+}
+
+header {
+    width: 100%;
 }

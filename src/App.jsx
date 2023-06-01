@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import * as Pages from "./pages"
 import { NavBar } from './components';
 import "./App.css"
-import './style.css'
+
 
 const App = () => {
   return (
