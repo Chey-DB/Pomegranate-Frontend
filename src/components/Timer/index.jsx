@@ -41,7 +41,7 @@ const Timer = () => {
   }
 
   const pomodoroTime = () => {
-    setTimeInput(0.2)
+    setTimeInput(0.05)
     document.getElementById('timer').style.backgroundColor = 'var(--maroon)'
     setWorking(true)
     stopTimer()
