@@ -5,7 +5,7 @@ import { Timer, Sounds} from '../../components'
 const Home = () => {
     return (
         <div>
-          {/* <Sounds/> */}
+          <Sounds/>
           <Timer/>
         </div>
     )

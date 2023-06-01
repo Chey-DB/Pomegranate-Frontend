@@ -1,20 +1,26 @@
 import React, { useState, useEffect } from 'react'
 
-import rain from "../../assets/loud-rain.wav";
+import loudRain from "../../assets/loud-rain.wav";
 import white from "../../assets/white-noise.wav"
+import waves from "../../assets/ocean-waves.wav"
+import rain from "../../assets/peaceful-rain.wav"
 
 const Sounds = () => {
+  const [track, setTrack] = useState('waves')
 
   const tracks = {
-    WhiteNoise: white,
-    Rain: rain
+    'Ocean Waves': waves,
+    'White Noise': white,
+    'Loud Rain': loudRain,
+    'Peaceful Rain': rain
   }
   
+  const music = new Audio(track)
+  music.loop = true
   
-  const [track, setTrack] = useState()
+  
 
-  useEffect(() => { let audio = new Audio(track)
-    audio.loop = true
+  useEffect(() => {new Audio(track)
   },[track])
 
   return (
@@ -32,13 +38,12 @@ const Sounds = () => {
       </label>
       <button
         onClick={() => {
-          audio.loop = true;
-          audio.play();
+          music.play();
         }}
       >
         Play
       </button>
-      <button onClick={() => (audio.pause())}>Pause</button>
+      <button onClick={() => (music.pause())}>Pause</button>
     </div>
   )
 }
