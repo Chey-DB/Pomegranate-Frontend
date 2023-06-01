@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <div>
           <Sounds/>
-          <Timer/>
+          {/* <Timer/> */}
         </div>
     )
 }

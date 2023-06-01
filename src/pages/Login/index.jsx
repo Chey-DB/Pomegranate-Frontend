@@ -19,7 +19,7 @@ const Login = () => {
 
     // ill use this to send to Be
     event.preventDefault();
-    const response = await fetch("http://localhost:3000/users/login", {
+    const response = await fetch("https://pomegranate-backend.onrender.com/users/login", {
       method: "POST",
       body: JSON.stringify({ username: username, password: password }),
       headers: {
@@ -35,6 +35,7 @@ const Login = () => {
     }
 
     console.log('username:', username);
+    localStorage.setItem('username', username)
     console.log('Password:', password);
   };
 
