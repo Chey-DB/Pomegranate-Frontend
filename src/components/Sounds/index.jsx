@@ -36,7 +36,7 @@ const Sounds = () => {
           </select>
         </label>
       </div>
-      <div>
+      <div className='button-container'>
         <button
           onClick={() => {
             music.play();
