@@ -17,12 +17,10 @@ const Tasks = () => {
     }, [tasks]);
 
     return (
-        <div className="container">
             <div className='app_wrapper'>
-                <div>
-                    <Header />
-                </div>
-                <div>
+                <div className='app_wrapper-inner'>
+                    <Header />              
+                <div className='taskForm-container'>
                     <Form
                         input={input}
                         setInput={setInput}
@@ -41,8 +39,8 @@ const Tasks = () => {
                         username={username}
                     />
                 </div>
+                </div>
             </div>
-        </div>
     )
 }
 

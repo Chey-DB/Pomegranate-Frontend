@@ -1,5 +1,5 @@
 .timerContainer {
-  display: grid;
+  display: block;
   grid-auto-rows: 550px;
   padding: 1rem 1rem;
 }

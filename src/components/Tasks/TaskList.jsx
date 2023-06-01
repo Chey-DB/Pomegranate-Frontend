@@ -38,7 +38,7 @@ const TaskList = ({ tasks, setTasks, setEditTask, username }) => {
     }
 
     return (
-        <div>
+        <div className='taskList-container'>
             {tasks.map((task, idx) => (
                 <li className="task_list" key={task.id}>
 
@@ -47,10 +47,8 @@ const TaskList = ({ tasks, setTasks, setEditTask, username }) => {
                         value={task.title}
                         className={`list ${task.completed ? "complete" : ""} `}
                         onChange={(event) => event.preventDefault()}
-                    />
-
-                    <div>
-                        <button className='button_complete task_button' onClick={() => handleComplete(task)}>
+                    />                   
+                       <button className='button_complete task_button' onClick={() => handleComplete(task)}>
                             <i className='fa fa-check-circle'></i>
                         </button>
                         <button className='button_edit task_button' onClick={() => handleEdit(task)}>
@@ -58,8 +56,7 @@ const TaskList = ({ tasks, setTasks, setEditTask, username }) => {
                         </button>
                         <button className='button_delete task_button' onClick={() => handleDelete(task, idx)}>
                             <i className='fa fa-trash'></i>
-                        </button>
-                    </div>
+                        </button>                   
                 </li>
             ))}
 
