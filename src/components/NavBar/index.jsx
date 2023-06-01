@@ -8,6 +8,7 @@ const NavBar = () => {
     const isLoggedIn = localStorage.getItem("isLoggedIn");
     const username = localStorage.getItem("username")
 
+    console.log(isLoggedIn)
     const activeStyle = {
         textDecoration: "underline",
         color: "#FFF6C3"
