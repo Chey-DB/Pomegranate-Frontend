@@ -48,7 +48,6 @@ const TimerProgress = ({
         console.log('in the catch')
     }
   }
-  getPomodoroCount()
   /* custom times */
   const cMin = minutes < 10 ? `0` + minutes : minutes
   const cSecs = seconds < 10 ? `0` + seconds : seconds
@@ -61,7 +60,7 @@ const TimerProgress = ({
 
       if (working == true) {
         addPomodoro()
-        
+        getPomodoroCount()
         confirm('nice work!') 
         ?
         shortBreakTime() :

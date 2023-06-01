@@ -5,8 +5,11 @@ import white from "../../assets/white-noise.wav"
 import waves from "../../assets/ocean-waves.wav"
 import rain from "../../assets/peaceful-rain.wav"
 
+import './style.css'
+
 const Sounds = () => {
   const [track, setTrack] = useState(waves)
+  // const [playing, setPlaying] = useState(false)
 
   const tracks = {
     'Ocean Waves': waves,
@@ -14,17 +17,29 @@ const Sounds = () => {
     'Loud Rain': loudRain,
     'Peaceful Rain': rain
   }
-  
+
   const music = new Audio(track)
   music.loop = true
-  
+
   useEffect(() => {new Audio(track)
   },[track])
 
+  const playTrack = () => {
+    // setPlaying(true)
+    music.play()
+
+  }
+
+  const pauseTrack = () => {
+    // setPlaying(false)
+    music.pause()
+
+  }
+
   return (
     <div>
-      <div className='formContainer'>
-        <label> Select relaxing sound :    
+      <div className='form-container'>
+        <label className='form-label'> Relaxing Sounds :
           <select
             value={track}
             onChange={e => setTrack(e.target.value)}
@@ -36,15 +51,9 @@ const Sounds = () => {
           </select>
         </label>
       </div>
-      <div>
-        <button
-          onClick={() => {
-            music.play();
-          }}
-        >
-          Play
-        </button>
-        <button onClick={() => (music.pause())}>Pause</button>
+      <div className='button-container'>
+        <button onClick={playTrack}>Play</button>
+        <button onClick={pauseTrack}>Pause</button>
       </div>
     </div>
   )
