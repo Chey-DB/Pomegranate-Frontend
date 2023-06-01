@@ -1,10 +1,11 @@
 import React from 'react'
 
-import { Timer } from '../../components'
+import { Tasks, Timer } from '../../components'
 
 const Profile = () => {
     return (
         <div>
+            <Tasks/>
             <Timer/>
         </div>
     )

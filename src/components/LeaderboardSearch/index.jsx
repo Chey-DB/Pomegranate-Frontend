@@ -9,7 +9,7 @@ const LeaderboardSearch = ({ users }) => {
     useEffect(() => {
         const getUser = async () => {
             try {
-                const result = await axios.get(`https://pomegranate-backend.onrender.com/users/${inputText}`)
+                const result = await axios.get(`http://localhost:3000/users/${inputText}`)
                 const data = result.data;
 
                 const updatedUser = { ...data.user };
