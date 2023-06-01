@@ -10,8 +10,11 @@ const Leaderboard = () => {
             try {
                 const response = await axios.get("https://pomegranate-backend.onrender.com/users")
                 const data = response.data;
-                const sortedUsers = data.users.sort((a, b) => b.pomodoroCount - a.pomodoroCount);
+                
+                const sortedUsers = data.users.sort((a, b) => b.pomodoroCountTotal - a.pomodoroCountTotal);
                 const rankedUsers = sortedUsers.map((user, idx) => ({ ...user, rank: idx + 1 }));
+                console.log(rankedUsers)
+                
                 setUsers(rankedUsers);
             } catch (error) {
                 console.log(error.message)
