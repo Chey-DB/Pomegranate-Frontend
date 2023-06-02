@@ -18,7 +18,7 @@ body {
 .login-form-container {
   display: flex;
   justify-content: center;
-  padding-top: 15rem
+  padding-top: 5rem
 }
 
 .form {

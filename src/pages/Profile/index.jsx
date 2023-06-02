@@ -3,9 +3,8 @@ import { useParams } from 'react-router'
 import "./styles.css"
 
 
-import { Menu, Tasks, Timer, Sounds } from '../../components'
+import { Tasks, Timer, Sounds } from '../../components'
 
-// import { Menu } from '../../components'
 
 
 const Profile = () => {
