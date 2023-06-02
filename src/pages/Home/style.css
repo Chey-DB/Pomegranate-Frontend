@@ -23,5 +23,6 @@ img.react:hover {
   /* height: 100rem; */
   line-height: 50px;
   text-align: center;
-  margin: 0 auto
+  margin: 0 auto;
+  font-size: 25px;
 }
