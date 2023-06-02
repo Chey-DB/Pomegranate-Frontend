@@ -6,4 +6,7 @@
 
 .leaderboard h1 {
     text-decoration: underline;
+    margin-bottom: 15px;
+    font-size: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }

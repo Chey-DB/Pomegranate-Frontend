@@ -5,19 +5,32 @@
 }
 
 .search-input {
+    outline: none;
     padding: 10px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+    margin-right: 25px;
+    font-size: 20px;
+    color: #ccc;
+    background-color: #000000;
+    border: 2px solid #c89566;
+    border-radius: 10px;
 }
 
 .form-button {
-    cursor: pointer;
+    /* cursor: pointer;
     border-radius: 10px;
     margin-left: 5px;
     font-size: 20px;
     width: 20%;
+    padding: 10px; */
+    width: 20%;
+    margin-left: 5px;
     padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid #c89666;
+    background-color: #000;
+    cursor: pointer;
+    color: #fff;
 }
 
 .form-button:hover {
