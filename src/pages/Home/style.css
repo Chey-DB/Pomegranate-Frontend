@@ -21,7 +21,8 @@ img.react:hover {
 .instructions-container {
   /* border: 2px solid var(--cream); */
   /* height: 100rem; */
-  line-height: 60px;
+  line-height: 50px;
   text-align: center;
-  margin: 0 auto
+  margin: 0 auto;
+  font-size: 25px;
 }
