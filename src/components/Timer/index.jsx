@@ -42,21 +42,24 @@ const Timer = () => {
 
   const pomodoroTime = () => {
     setTimeInput(0.05)
-    document.getElementById('timer').style.backgroundColor = 'var(--maroon)'
+    document.getElementById('inner').style.backgroundColor = 'var(--maroon)'
+    document.getElementById('working').style.color = 'var(--maroon)'
     setWorking(true)
     stopTimer()
   }
 
   const shortBreakTime = () => {
     setTimeInput(0.1)
-    document.getElementById('timer').style.backgroundColor = '#008585'
+    document.getElementById('inner').style.backgroundColor = '#008585'
+    document.getElementById('working').style.color = '#008585'
     setWorking(false)
     stopTimer()
   }
   
   const longBreakTime = () => {
     setTimeInput(0.1)
-    document.getElementById('timer').style.backgroundColor = '#430085'
+    document.getElementById('inner').style.backgroundColor = '#430085'
+    document.getElementById('working').style.color = '#430085'
     setWorking(false)
     stopTimer()
   }
@@ -75,8 +78,8 @@ const Timer = () => {
         <div id='timer' className ="timer">
           <div className='workingContainer'>
           {working
-            ? <h2>Time for work</h2>
-            : <h2>Time for rest</h2>
+            ? <h2 id='working'>Time for work</h2>
+            : <h2 id='working'>Time for rest</h2>
           }
           </div>
         <TimerProgress {...{
@@ -107,7 +110,7 @@ const Timer = () => {
         }}
         />
         </div>
-        <div className='countContainer'>
+        <div id='text' className='countContainer'>
           <h2>Pomodoro count is {pomodoroCount}</h2>
         </div>
       </div>

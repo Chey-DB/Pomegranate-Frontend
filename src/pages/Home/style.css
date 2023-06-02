@@ -12,11 +12,11 @@
 }
 
 .hero:hover {
-  filter: drop-shadow(0 0 2em var(--yellow));
+  filter: drop-shadow(0 0 3em var(--yellow));
 }
 
 .hero.react:hover {
-  filter: drop-shadow(0 0 2em var(--cream));
+  filter: drop-shadow(0 0 3em var(--cream));
 }
 
 .instructions-container {
@@ -24,5 +24,6 @@
   /* height: 100rem; */
   line-height: 50px;
   text-align: center;
-  margin: 0 auto
+  margin: 0 auto;
+  color: #FFF
 }
