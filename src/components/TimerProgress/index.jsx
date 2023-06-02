@@ -26,9 +26,11 @@ const TimerProgress = ({
     countDownTime,
   })
 
+
   const addPomodoro = async () => {
 
     await fetch(`https://pomegranate-backend.onrender.com/users/${username}/pomodoro`, {
+
       method: "PATCH",
       body: JSON.stringify({ username: username }),
       headers: {
@@ -40,13 +42,13 @@ const TimerProgress = ({
 
   const getPomodoroCount = async () => {
     try {
-      const data = await axios.get(`https://pomegranate-backend.onrender.com/users/${username}`)
-      // console.log(data)
-      const count = data.data.user.pomodoroCountTotal;
-      setPomodoroCount(count)
+        const data = await axios.get(`https://pomegranate-backend.onrender.com/users/${username}`)
+        // console.log(data)
+        const count = data.data.user.pomodoroCountTotal;
+        // console.log(count)
+        setPomodoroCount(count)
     } catch (err) {
-      console.log(err.message)
-      console.log('in the catch')
+        console.log(err.message)
     }
   }
   /* custom times */

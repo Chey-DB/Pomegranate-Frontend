@@ -19,7 +19,7 @@ img.react:hover {
 }
 
 .instructions-container {
-  border: 2px solid var(--cream);
+  /* border: 2px solid var(--cream); */
   /* height: 100rem; */
   line-height: 60px;
   text-align: center;
