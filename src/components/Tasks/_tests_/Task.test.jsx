@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import Header from './Header';
 import TaskList from './TaskList';
 import App from './index';
+import Form from './Form'; 
 
 
 
@@ -35,7 +36,7 @@ describe('TaskList component', () => {
 });
 
 
-// testing testing index return statement
+// testing  index return statement
 
 describe('App component', () => {
   it('renders the App correctly', () => {
@@ -52,5 +53,79 @@ describe('App component', () => {
 
     const taskList = screen.getByTestId('taskList');
     expect(taskList).toBeInTheDocument();
+  });
+});
+
+// testing form page 
+
+import React from 'react';
+import { render, screen, fireEvent } from '@testing-library/react';
+import Form from './Form';
+
+describe('Form component', () => {
+  it('renders the form and handles input change', () => {
+    const setInput = jest.fn();
+    const input = 'Task 1';
+
+    render(
+      <Form input={input} setInput={setInput} />
+    );
+
+    const inputElement = screen.getByPlaceholderText('Enter a task');
+
+    // this should check if input element exists
+    expect(inputElement).toBeInTheDocument();
+
+   
+    fireEvent.change(inputElement, { target: { value: 'New Task' } });
+
+    // this should Check if setInput function is called with the new value
+    expect(setInput).toHaveBeenCalledWith('New Task');
+  });
+
+  it('handles form submission and adds a new task', () => {
+    const setTasks = jest.fn();
+    const setInput = jest.fn();
+    const tasks = [];
+    const input = 'New Task';
+
+    render(
+      <Form
+        input={input}
+        setInput={setInput}
+        tasks={tasks}
+        setTasks={setTasks}
+      />
+    );
+
+    const formElement = screen.getByTestId('form');
+    const inputElement = screen.getByPlaceholderText('Enter a task');
+    const addButton = screen.getByText('Add');
+
+    // not sure 
+    fireEvent.submit(formElement);
+
+    // this should Check if setTasks function is called with the new task- not sure though need to double check this one
+    expect(setTasks).toHaveBeenCalledWith([{ id: expect.any(String), title: 'New Task', completed: false }]);
+
+    // this should Check if setInput function is called to clear the input
+    expect(setInput).toHaveBeenCalledWith('');
+
+    // Check if the input element is cleared
+    expect(inputElement.value).toBe('');
+
+    // this should Check if addButton text changes to 'OK' when editTask prop is provided
+    render(
+      <Form
+        input={input}
+        setInput={setInput}
+        tasks={tasks}
+        setTasks={setTasks}
+        editTask={{ id: '1', title: 'Task 1', completed: false }}
+      />
+    );
+
+    const okButton = screen.getByText('OK');
+    expect(okButton).toBeInTheDocument();
   });
 });
