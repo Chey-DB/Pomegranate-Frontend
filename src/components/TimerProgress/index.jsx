@@ -1,5 +1,5 @@
-import React, { useEffect, memo, useState} from 'react'
-import styled, {keyframes, css} from 'styled-components'
+import React, { useEffect, memo, useState } from 'react'
+import styled, { keyframes, css } from 'styled-components'
 import axios from "axios"
 import './style.css'
 import { useCountDown } from '../../hooks'
@@ -18,34 +18,35 @@ const TimerProgress = ({
   shortBreakTime
 }) => {
 
-  const {username} = useParams()
-  
+  const { username } = useParams()
+
   const [seconds, minutes] = useCountDown({
     timeInMilliseconds,
     countDownStarted,
     countDownTime,
   })
 
-  const addPomodoro = async () => { 
+  const addPomodoro = async () => {
 
-    fetch(`https://pomegranate-backend.onrender.com/users/${username}/pomodoro`, {
+    await fetch(`https://pomegranate-backend.onrender.com/users/${username}/pomodoro`, {
       method: "PATCH",
+      body: JSON.stringify({ username: username }),
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
+        'Authorization': localStorage.getItem("token")
       },
     })
   }
 
-    
   const getPomodoroCount = async () => {
     try {
-        const data = await axios.get(`https://pomegranate-backend.onrender.com/users/${username}`)
-        // console.log(data)
-        const count = data.data.user.pomodoroCountTotal;
-        setPomodoroCount(count)
+      const data = await axios.get(`https://pomegranate-backend.onrender.com/users/${username}`)
+      // console.log(data)
+      const count = data.data.user.pomodoroCountTotal;
+      setPomodoroCount(count)
     } catch (err) {
-        console.log(err.message)
-        console.log('in the catch')
+      console.log(err.message)
+      console.log('in the catch')
     }
   }
   /* custom times */
@@ -54,24 +55,24 @@ const TimerProgress = ({
 
   // stop timer and reset/
   useEffect(() => {
-    
-    if((minutes + seconds) <= -1){
+
+    if ((minutes + seconds) <= -1) {
       stopTimer();
 
       if (working == true) {
         addPomodoro()
         getPomodoroCount()
-        confirm('nice work!') 
-        ?
-        shortBreakTime() :
-        null
+        confirm('nice work!')
+          ?
+          shortBreakTime() :
+          null
       } else {
         confirm('back to work!') ?
-        pomodoroTime() :
-        null
-      } 
+          pomodoroTime() :
+          null
+      }
     }
-  }, [minutes,seconds]); 
+  }, [minutes, seconds]);
 
 
 
