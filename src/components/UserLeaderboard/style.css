@@ -6,4 +6,6 @@
 
 .leaderboard h1 {
     text-decoration: underline;
+    margin-bottom: 15px;
+    font-size: 60px;
 }

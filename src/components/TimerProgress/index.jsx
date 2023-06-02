@@ -84,7 +84,7 @@ const TimerProgress = ({
   return (
     <div className='pg-container'>
       <PgWidget>
-        <PgWidgetInner />
+        <PgWidgetInner id='inner' />
         <PgWidgetNumber>
           {cMin} : {cSecs}
         </PgWidgetNumber>
@@ -124,7 +124,7 @@ const PgWidgetInner = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 100%;
-  // background-color: var(--default-color);
+  background-color: var(--maroon);
   z-index: 6;
 `;
 const PgWidgetNumber = styled.div`
@@ -139,7 +139,6 @@ const PgWidgetNumber = styled.div`
   font-family: "Rubik", sans-serif;
 `;
 const Circle = styled.div`
-background: black;
 `;
 
 const PgWidgetBarL = styled.div`
@@ -165,7 +164,7 @@ const PgWidgetProgressLeft = styled.div`
     position: absolute;
     height: 100%;
     width: 100%;
-    background: transparent;
+    background: var(--white);
     clip: rect(0px, 97px, 194px, 0px);
     border-radius: 100%;
     animation: ${props => (props.timeInMilliseconds > 0 ? css`${left} ${props.animationDuration}s linear both` : '')} ;
@@ -175,7 +174,7 @@ const PgWidgetProgressRight = styled.div`
     position: absolute;
     height: 100%;
     width: 100%;
-    background: transparent;
+    background: var(--white);
     clip: rect(0px, 97px, 194px, 0px);
     border-radius: 100%;
     animation: ${props => (props.timeInMilliseconds > 0 ? css`${right} ${props.animationDuration}s linear both` : '')} ;
