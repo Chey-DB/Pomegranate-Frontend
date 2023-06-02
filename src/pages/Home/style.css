@@ -7,14 +7,15 @@
   margin-right: auto;
 }
 
-img {
+.hero {
   border-radius: 100%;
 }
 
-img:hover {
+.hero:hover {
   filter: drop-shadow(0 0 2em var(--yellow));
 }
-img.react:hover {
+
+.hero.react:hover {
   filter: drop-shadow(0 0 2em var(--cream));
 }
 
