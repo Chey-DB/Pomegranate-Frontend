@@ -18,7 +18,7 @@ describe('App component', () => {
     
     await screen.findByText('Task 1');
 
-    // Perform your assertions here
+    
     const task1 = screen.getByText('Task 1');
     expect(task1).toBeInTheDocument();
     // for this test you must npm install --save-dev fetch-mock dont ask why
