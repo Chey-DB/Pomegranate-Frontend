@@ -37,7 +37,7 @@ const Sounds = () => {
   }
 
   return (
-    <div>
+    <div className='music-container'>
       <div className='form-container'>
         <label className='form-label'> Relaxing Sounds :
           <select
