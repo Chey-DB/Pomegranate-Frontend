@@ -37,7 +37,6 @@ const Form = ({ input, setInput, tasks, setTasks, editTask, setEditTask, usernam
             })
                 .then((res) => { res.json() })
                 .then((data) => {
-                    alert("added task!");
                 })
                 .catch((err) => {
                     console.log(err.message);
