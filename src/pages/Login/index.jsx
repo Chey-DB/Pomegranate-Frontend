@@ -32,12 +32,12 @@ const Login = () => {
     if (data.error) {
       alert(data.error, "error")
     } else {
+      localStorage.setItem('username', username)
       localStorage.setItem("isLoggedIn", "true");
       navigate(`/profile/${username}`);
     }
 
     console.log('username:', username);
-    localStorage.setItem('username', username)
     console.log('Password:', password);
   };
 
