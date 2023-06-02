@@ -41,7 +41,7 @@ const Timer = () => {
   }
 
   const pomodoroTime = () => {
-    setTimeInput(0.05)
+    setTimeInput(0.1)
     document.getElementById('inner').style.backgroundColor = 'var(--maroon)'
     document.getElementById('working').style.color = '#850000'
     setWorking(true)
@@ -49,7 +49,7 @@ const Timer = () => {
   }
 
   const shortBreakTime = () => {
-    setTimeInput(0.1)
+    setTimeInput(0.05)
     document.getElementById('inner').style.backgroundColor = '#008585'
     document.getElementById('working').style.color = '#008585'
     setWorking(false)
