@@ -27,7 +27,7 @@ const TimerProgress = ({
   })
 
   const addPomodoro = async () => { 
-
+    console.log('hello')
     fetch(`https://pomegranate-backend.onrender.com/users/${username}/pomodoro`, {
       method: "PATCH",
       headers: {
@@ -42,10 +42,10 @@ const TimerProgress = ({
         const data = await axios.get(`https://pomegranate-backend.onrender.com/users/${username}`)
         // console.log(data)
         const count = data.data.user.pomodoroCountTotal;
+        console.log(count)
         setPomodoroCount(count)
     } catch (err) {
         console.log(err.message)
-        console.log('in the catch')
     }
   }
   /* custom times */
