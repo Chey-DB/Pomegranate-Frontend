@@ -32,6 +32,7 @@ const Login = () => {
     if (data.error) {
       alert(data.error, "error")
     } else {
+      localStorage.setItem('token', data.token)
       localStorage.setItem('username', username)
       localStorage.setItem("isLoggedIn", "true");
       navigate(`/profile/${username}`);
