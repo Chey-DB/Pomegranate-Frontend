@@ -60,7 +60,7 @@ const Login = () => {
           </div>
 
           <button type="submit" className="form__button">Login</button>
-          <p className="reg">Don't have an account? <Link to="/signup"> Register here!</Link></p>
+          <p className="reg">Don't have an account? <Link to="/signup"> Sign up here!</Link></p>
         </form>
       </div>
     </>

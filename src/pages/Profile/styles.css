@@ -7,7 +7,7 @@
     /* border: 2px solid var(--cream); */
     position: absolute;
     top: 0;
-    right: 0;
-    margin-top: 11rem;
-    margin-right: 10rem
+    left: 0;
+    margin-top: 16rem;
+    margin-left: 3rem
 }

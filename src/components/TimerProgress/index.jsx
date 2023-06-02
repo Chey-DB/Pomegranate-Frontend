@@ -57,13 +57,13 @@ const TimerProgress = ({
 
   // stop timer and reset/
   useEffect(() => {
-
+    getPomodoroCount()
     if ((minutes + seconds) <= -1) {
       stopTimer();
 
       if (working == true) {
         addPomodoro()
-        getPomodoroCount()
+        // getPomodoroCount()
         confirm('nice work!')
           ?
           shortBreakTime() :
@@ -78,7 +78,7 @@ const TimerProgress = ({
 
   useEffect(() => {
     getPomodoroCount()
-  },[])
+  },[pomodoroCount])
 
 
   return (
