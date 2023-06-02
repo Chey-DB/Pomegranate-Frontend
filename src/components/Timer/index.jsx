@@ -69,14 +69,16 @@ const Timer = () => {
 
   return (
     <>
-      <div className='workingContainer'>
-      {working
-        ? <h2>Time for work</h2>
-        : <h2>Time for rest</h2>
-      }
-      </div>
+      
       <div className="timerContainer">
+        
         <div id='timer' className ="timer">
+          <div className='workingContainer'>
+          {working
+            ? <h2>Time for work</h2>
+            : <h2>Time for rest</h2>
+          }
+          </div>
         <TimerProgress {...{
           timeInMilliseconds,
           stopTimer,

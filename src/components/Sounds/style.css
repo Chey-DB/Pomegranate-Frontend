@@ -1,0 +1,35 @@
+.button-container button {
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5);
+  padding: 0.6rem;
+  margin-right: 0.5rem;
+  border-radius: 0.5rem;
+  color: var(--white);
+  background-color: var(--default-color);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 2px solid var(--white);
+  transition: all 0.5ms ease-in-out;
+}
+
+.button-container button:hover {
+  border-color: var(--yellow);
+  box-shadow: unset;
+}
+
+.form-container select {
+  border: 0 ;
+  background: var(--default-color);
+  width: auto; 
+  text-indent: 0.01px; 
+  color: #FFF;
+  border-radius: 10rem;
+  margin-left: 0.6rem;
+  padding: 5px;
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5);
+}
+
+label {
+  font-size: 1.2rem;
+  font-weight: 700;
+}

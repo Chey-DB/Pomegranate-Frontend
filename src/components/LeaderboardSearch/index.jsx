@@ -11,7 +11,7 @@ const LeaderboardSearch = ({ users }) => {
             try {
                 const result = await axios.get(`https://pomegranate-backend.onrender.com/users/${inputText}`)
                 const data = result.data;
-
+    
                 const updatedUser = { ...data.user };
                 const existingRankedUser = users.find(user => user.id === updatedUser.id);
 

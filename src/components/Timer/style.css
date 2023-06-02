@@ -29,14 +29,16 @@
 
 .workingContainer {
   position: absolute;
-  top: 20%;
+  top: 21%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: #FFF
 }
 
 .countContainer {
   position: absolute;
-  top: 115%;
+  top: 77%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: #FFF
 }
