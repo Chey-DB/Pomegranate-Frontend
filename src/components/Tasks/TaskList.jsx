@@ -24,7 +24,6 @@ const TaskList = ({ tasks, setTasks, setEditTask, username }) => {
         })
             .then((res) => { res.json() })
             .then((data) => {
-                alert("deleted task!");
             })
             .catch((err) => {
                 console.log(err.message);

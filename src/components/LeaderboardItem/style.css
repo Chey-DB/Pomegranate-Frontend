@@ -1,15 +1,28 @@
 .user-score {
     font-size: 30px;
-    background-color: #FFF6C3;
-    border: 2px solid #DC0000;
+    /* background-color: var(--maroon); */
+    /* border: 2px solid var(--cream); */
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5);
     padding: 50px;
-    width: 70%;
+    width: 35%;
     border-radius: 10px;
     margin-bottom: 10px;
     text-align: center;
     transition: transform 0.3s ease;
+    color: black;
 }
 
 .user-score:hover {
     transform: scale(0.98);
+}
+
+.user-score {
+    display: flex;
+    justify-content: space-between;
+}
+
+strong {
+    color: var(--cream);
+    font-size: 40px;
+    font-weight: bold;
 }
