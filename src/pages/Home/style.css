@@ -7,15 +7,16 @@
   margin-right: auto;
 }
 
-img {
+.hero {
   border-radius: 100%;
 }
 
-img:hover {
-  filter: drop-shadow(0 0 2em var(--yellow));
+.hero:hover {
+  filter: drop-shadow(0 0 3em var(--yellow));
 }
-img.react:hover {
-  filter: drop-shadow(0 0 2em var(--cream));
+
+.hero.react:hover {
+  filter: drop-shadow(0 0 3em var(--cream));
 }
 
 .instructions-container {
@@ -24,5 +25,9 @@ img.react:hover {
   line-height: 50px;
   text-align: center;
   margin: 0 auto;
+
+  color: #FFF
+
   font-size: 25px;
 }
+

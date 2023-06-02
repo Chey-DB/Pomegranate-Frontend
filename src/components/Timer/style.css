@@ -15,7 +15,7 @@
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-rows: 50% 50%;
-  background-color: var(--maroon)
+  /* background-color: var(--maroon) */
 }
 
 /* @media screen and (min-width: 768px){
@@ -32,7 +32,7 @@
   top: 21%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #FFF
+  color: #000000
 }
 
 .countContainer {

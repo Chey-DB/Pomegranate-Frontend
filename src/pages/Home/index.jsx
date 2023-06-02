@@ -1,13 +1,14 @@
 import React from 'react'
 import './style.css'
 import dancing from '../../assets/dancing.gif'
+import {Link} from 'react-router-dom';
 
 const Home = () => {
     return (
         <div>
-          <a>
+          <Link to='/signup'>
             <img src={dancing} alt='dancing pomegranate' className='hero' />
-          </a>
+          </Link>
           <div className='instructions-container'>
             <h3>How to use the Pomodoro Timer?</h3>
             <p>
