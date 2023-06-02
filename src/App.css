@@ -14,8 +14,14 @@
 }
 
 body {
-background-color: var(--yellow);;
+/* background-color: var(--yellow); */
+/* background-image: url("https://wallpaperaccess.com/full/527673.jpg"); */
+background-image: url("https://i.pinimg.com/originals/d8/39/74/d839742a057e1d111d0373fa614de906.jpg");
+/* background-image: url("https://img3.wallspic.com/crops/7/1/5/8/3/138517/138517-shibuya-town-urban_area-street-metropolis-3840x2160.jpg"); */
+background-repeat: no-repeat;
+background-size: cover;
 }
+
 
 
 /* Large screen sizes => 768px */
