@@ -5,7 +5,6 @@ import "./styles.css"
 
 import { Tasks, Timer, Sounds } from '../../components'
 
-// import { Menu } from '../../components'
 
 
 const Profile = () => {
