@@ -76,6 +76,9 @@ const TimerProgress = ({
     }
   }, [minutes, seconds]);
 
+  useEffect(() => {
+    getPomodoroCount()
+  },[])
 
 
   return (
