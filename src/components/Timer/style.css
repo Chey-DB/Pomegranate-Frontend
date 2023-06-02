@@ -32,11 +32,13 @@
   top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: #FFF
 }
 
 .countContainer {
   position: absolute;
-  top: 115%;
+  top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: #FFF
 }

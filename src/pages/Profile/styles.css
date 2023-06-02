@@ -2,3 +2,13 @@
     width: 100%;
     height: 100vh;    
 }
+
+.sound-container {
+    /* border: 2px solid var(--cream); */
+    padding-top: 10.5rem;
+    padding-right: 3rem;
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+}

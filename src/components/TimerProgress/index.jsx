@@ -42,7 +42,7 @@ const TimerProgress = ({
         const data = await axios.get(`https://pomegranate-backend.onrender.com/users/${username}`)
         // console.log(data)
         const count = data.data.user.pomodoroCountTotal;
-        console.log(count)
+        // console.log(count)
         setPomodoroCount(count)
     } catch (err) {
         console.log(err.message)
